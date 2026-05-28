@@ -108,12 +108,12 @@ $$
 
 ## Operaciones con Complejos
 
-* Suma: Utilizar forma binómica. Sumar los $a$ y los $b$ por separado.
-* Resta: Utilizar forma binómica. Restar los $a$ y los $b$ por separado.
-* Multiplicación: Utilizar forma polar. Multiplicar los módulos según propiedad 2 y sumar los ángulos según propiedad 7.
-* División: Utilizar forma polar. Dividir los módulos según propiedad 3 y restar los ángulos según propiedad 8.
-* Potenciación: Elevar el módulo y multiplicar el ángulo según propiedad 9.
-* Radicación: Dado $z$, existen $k$ complejos $w$ que son raíz n-ésima de $w$, dados por:
+* **Suma:** Utilizar forma binómica. Sumar los $a$ y los $b$ por separado.
+* **Resta:** Utilizar forma binómica. Restar los $a$ y los $b$ por separado.
+* **Multiplicación:** Utilizar forma polar. Multiplicar los módulos según propiedad 2 y sumar los ángulos según propiedad 7.
+* **División:** Utilizar forma polar. Dividir los módulos según propiedad 3 y restar los ángulos según propiedad 8.
+* **Potenciación:** Elevar el módulo y multiplicar el ángulo según propiedad 9.
+* **Radicación:** Dado $z$, existen $k$ complejos $w$ que son raíz n-ésima de $w$, dados por:
   $$
   w_k = \big(\sqrt[n]{|z|}, \frac{\varphi_z + 2k\pi}{n}\big) \text{,  } k \in \{0, 1, ..., n - 1\}
   $$
@@ -123,12 +123,12 @@ $$
   Re(w) = \pm \sqrt{\frac{|z| + Re(z)}{2}} \space \space \space \space, \space \space \space \space Im(w) = \pm \sqrt{\frac{|z| - Re(z)}{2}}
   $$
   Para elegir los signos se usa que $2Re(w)Im(w) = Im(z)$.
-* Logaritmación: Existen infinitos $w_k$ tal que $w_k = \ln(z)$, dados por:
+* **Logaritmación:** Existen infinitos $w_k$ tal que $w_k = \ln(z)$, dados por:
   $$
   w_k = \ln(|z|) + i(\varphi_z + 2k\pi) \text{,  } k \in \Z
   $$
   Se suele trabajar con $k = 0$.
-* Potencia compleja:
+* **Potencia compleja:**
   $$
   z^w = e^{w \ln(z)}
   $$
