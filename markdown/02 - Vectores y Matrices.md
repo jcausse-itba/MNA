@@ -232,3 +232,9 @@ donde $a_{ij}$ es el elemento en la posición $(i, j)$ y $A_{ij}$ su cofactor.
 </p>
 
 * Para matrices de mayores dimensiones, el cálculo es largo, ya que es recursivo.
+
+---
+
+## Traza
+
+La traza de una matriz $A$ **cuadrada**, $tr(A)$, es la suma de los elementos de toda la diagonal.
