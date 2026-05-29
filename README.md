@@ -5,8 +5,7 @@ Resúmenes de Métodos Numéricos Avanzados
 ## Contenido
 
 Importante:
-* `pdf`: Resúmenes exportados a PDF listos para imprimir. `Resumen-Combinado.md` contiene todos los archivos combinados, más un índice.
-* `markdown`: Resúmenes editables en formato `MD`. `Resumen-Combinado.pdf` contiene todos los archivos combinados, más un índice.
+* `markdown`: Resúmenes separados, editables en formato `MD`.
 * `img`: Imágenes referenciadas desde los `MD`.
 
 Cosas que uno hace cuando está aburrido:
