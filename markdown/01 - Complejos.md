@@ -1,4 +1,4 @@
-# 01 - Números Complejos
+# Números Complejos
 
 ## Unidad Imaginaria
 Se define la unidad imaginaria $i$ de forma tal que:
@@ -28,7 +28,7 @@ $$
 
 ---
 
-## Número Complejo
+## Definición de Número Complejo
 
 > **Nota:** El cuerpo $\Complex$ de todos los números complejos es un cuerpo no ordenado, ya que no cumple los axiomas de orden que se cumlpen para $\R$.
 

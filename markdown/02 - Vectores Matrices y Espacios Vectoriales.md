@@ -1,31 +1,29 @@
-# 02 - Vectores, Matrices y Espacios Vectoriales
-
 # Vectores
 
-## Operaciones entre vectores
+## Operaciones entre Vectores
 
 * **Igualdad:** Dos vectores son iguales si son iguales componente a componente.
 * **Adición:** Dos vectores de la misma dimensión pueden sumarse componente a componente, generando un nuevo vector de la misma dimensión.
 * **Producto por un escalar:** Se multiplica el escalar por cada componente del vector. Genera un nuevo vector de la misma dimensión.
 * **Producto Interno**: Dados dos vectores $u, r\in \Kappa^n$ se define el producto interno (un escalar) entre ellos como:
   $$
-  <u, r> = \sum_{k = 1}^{n} u_i \overline{r_i}
+  \langle u, r \rangle = \sum_{k = 1}^{n} u_i \overline{r_i}
   $$
   Propiedades:
-  * $<u, r> = \overline{<r, u>}$
-  * $<u + s, r> = <u, r> + <s, r>$
-  * $<u, r + s> = <u, r> + <u, s>$
-  * Con $\alpha$ escalar, $<\alpha u, r> = \alpha <u, r>$
-  * Con $\alpha$ escalar, $<u, \alpha r> = \bar{\alpha} <u, r>$
-  * $<u, u> \space \ge 0$
-  * $|<u, r>|^2 \le |<u, u>|^2 \space |<r, r>|^2$
+  * $\langle u, r \rangle = \overline{\langle r, u \rangle}$
+  * $\langle u + s, r \rangle = \langle u, r \rangle + \langle s, r \rangle$
+  * $\langle u, r + s \rangle = \langle u, r \rangle + \langle u, s \rangle$
+  * Con $\alpha$ escalar, $\langle \alpha u, r \rangle = \alpha \langle u, r \rangle$
+  * Con $\alpha$ escalar, $\langle u, \alpha r \rangle = \bar{\alpha} \langle u, r \rangle$
+  * $\langle u, u \rangle \space \ge 0$
+  * $|\langle u, r \rangle|^2 \le |\langle u, u \rangle|^2 \space |\langle r, r \rangle|^2$
 * **Producto Vectorial:** Para dos vectores en $\R^3$ se usa la Regla de Sarrus. Devuelve un vector perpendicular a ambos.
 
 <p align="center">
   <img src="../img/sarrus.png" height="120"/>
 </p>
 
-## Norma de un vector
+## Norma de un Vector
 
 Función $N$ que recibe un vector $u$ y devuelve un escalar, que cumple:
 1. $N(u) \ge 0 \land N(u) = 0 \iff u = 0$
@@ -36,7 +34,7 @@ Función $N$ que recibe un vector $u$ y devuelve un escalar, que cumple:
 
 1. **Norma usual (Norma 2):**
   $$
-  ||u||_2 = \sqrt{<u, u>}
+  ||u||_2 = \sqrt{\langle u, u \rangle}
   $$
 2. **Norma 1:**
   $$
@@ -49,22 +47,28 @@ Función $N$ que recibe un vector $u$ y devuelve un escalar, que cumple:
 4. **Norma infinito:**
    $||u||_\infty = \max\{|u_i| \space / \space 1 \le i \le n \}$
 
-## Ángulo entre vectores
+## Ángulo entre Vectores
 
 El ángulo $\alpha$ (con $0 \le \alpha \le \pi$) entre dos vectores $u$ y $r$ es aquel que cumple:
 $$
-\cos(\alpha) = \frac{<u, r>}{||u||_2 \space ||r||_2}
+\cos(\alpha) = \frac{\langle u, r \rangle}{||u||_2 \space ||r||_2}
 $$
 
-## Paralelismo y perpendicularidad
+## Paralelismo y Perpendicularidad
 * $u$ y $r$ son paralelos si existe un escalar $k$ tal que $r = k \cdot u$
-* $u$ y $r$ son perpendiculares si son no nulos y $<u, r> = 0$
+* $u$ y $r$ son perpendiculares si son no nulos y $\langle u, r \rangle = 0$
 
 ---
 
 # Matrices
 
-## Operaciones entre matrices
+## Notación
+
+* $A$ denota una matriz.
+* $a_{ij}$ denota el elemento en la posición (fila $i$, columna $j$).
+* $A_k$ denota la columna $k$, y entonces si $A$ tiene $n$ columnas, $A = (A_1, A_2, ..., A_n)$.
+
+## Operaciones entre Matrices
 
 * **Igualdad:** Dos matrices son iguales si son iguales posición a posición.
 * **Adición:** Dos matrices de las mismas dimensiones se suman posición a posición. Esto genera una matriz de la misma dimensión.
@@ -103,7 +107,7 @@ Sean las matrices $C$ de dimensión $n \times m$, $D$ de dimensión $m \times p$
   * $A^{p + q} = A^p + A^q$
   * $(A^p)^q = A^{pq}$
 
-## Matriz transpuesta
+## Matriz Transpuesta
 
 Cada elemento $i$,$j$ en la matriz original ocupa la posición $j$,$i$ en la transpuesta. Las filas se transforman en las columnas y viceversa. Si la matriz es de dimensión $n \times p$, queda de $p \times n$.
 
@@ -113,14 +117,14 @@ Cada elemento $i$,$j$ en la matriz original ocupa la posición $j$,$i$ en la tra
 3. $(\lambda A)^T = \lambda A^T$
 4. $(AB)^T = B^T A^T$
 
-## Matriz identidad
+## Matriz Identidad
 
 Tiene unos en la diagonal (todo elemento donde $i = j$) y ceros en todos los otros elementos. Se la denota $I$. Como siempre es cuadrada ($n \times n$), la notación $I_n$ indica, además, la dimensión. Cumple que:
 $$
 A I = I A = A
 $$
 
-## Matriz inversa
+## Matriz Inversa
 
 Una matriz $A$ es invertible cuando:
 
@@ -141,7 +145,7 @@ Cuando no es cuadrada, se habla de **pseudoinversa** (viene más adelante).
 3. Sea $\lambda$ un escalar no nulo: $(\lambda A)^{-1} = \frac{1}{\lambda} A^{-1}$
 4. $(AB)^{-1} = B^{-1} A^{-1}$
 
-## Matrices con nombre propio
+## Matrices con Nombre Propio
 
 Ciertas matrices reciben un nombre especial si cumplen alguna propiedad. Se enumeran los nombres y lo que tienen que cumplir para serlo.
 
@@ -159,5 +163,63 @@ Ciertas matrices reciben un nombre especial si cumplen alguna propiedad. Se enum
 * **Matriz Nilpotente:** Si $A^n$ es la matriz nula $\forall n \ge n_0$, $n_0$ es el índice de nilpotencia.
 * **Matriz Ortogonal:** $AA^T = A^TA = I_n$
 
----
+## Forma Multilineal Alternada
 
+Es una función $f$ que toma matrices cuadradas y devuelve escalares, que cumple:
+
+1. $f(A_1, ..., A_i + B_i, ..., A_n) = f(A_1, ..., A_i, ..., A_n) + f(A1, ..., B_i, ..., A_n)$
+2. $f(A_1, ..., \lambda A_i, ..., A_n) = \lambda f(A_1, ..., A_n)$
+3. $f(A_1, ..., A_i, ..., A_i, ..., A_n) = 0$ (si hay columnas duplicadas da cero)
+
+> **Cuidado:** la segunda condición implica que al hacer $\lambda \cdot det(A)$ esto **NO** es lo mismo que $det(\lambda A)$, sino que se multiplica solo una de las columnas al "meter el escalar para adentro".
+>
+> En cambio, se cumple que si $A$ tiene $n$ columnas, $det(\lambda A) = \lambda^n det(A)$.
+
+Como consecuencias, se cumple que:
+
+1. $f(A_1, ..., A_{i-1}, 0, A_{i+1}, ..., A_n) = 0$
+
+    (Si una columna tiene todos ceros la función da cero)
+
+2. $f(A_1, ..., A_i, ..., A_j, ..., A_n) = -f(A_1, ..., A_j, ..., A_i, ..., A_n)$ 
+
+    (Intercambiar dos columnas cambia el signo)
+
+3. $f(A_1, ..., A_i + \alpha A_j, ..., A_n) = f(A_1, ..., A_i, ..., A_n)$
+
+    (Si a una columna $A_i$ le sumás un múltiplo escalar de otra columna $A_j$, el valor de la función no se altera)
+
+4. Si $A_i = \sum_{j=1}^{n} \alpha_j A_j \, , \, j \neq i \implies f(A_1, ..., A_i, ..., A_n) = 0$
+
+    Si una columna $A_i$ es combinación lineal de las demás columnas (es decir, se puede expresar como la suma de las otras columnas multiplicadas por escalares $\alpha_j$), entonces la función evaluada en esa matriz da como resultado cero. Esto es una consecuencia directa de las propiedades anteriores.
+
+## Determinante
+
+El determinante de una matriz $A$, notado $det(A)$, $|A|$, $D(A)$ o $d(A)$ es la única función multilineal alternada que cumple $f(I_n) = 1$.
+
+Como es una función multilineal alternada, cumple las 4 propiedades de más arriba.
+
+
+### Menor de un elemento
+
+Sea una matriz $A$ de dimensión $n \times n$, se define el menor de un elemento como la matriz $M_{ij}$ de dimensión $(n - 1) \times (n - 1)$ que se obtiene eliminando de $A$ la fila $i$ y la columna $j$ (similar a "tapar" una fila y una columna, algo que se hace como "truco" para calcular un producto vectorial de $3 \times 3$).
+
+### Cofactor de un elemento
+
+Se define el cofactor del elemento en la posición $(i, j)$ de la matriz $A$, y se lo nota $A_{ij}$, como:
+
+$$
+A_{ij} = (-1)^{i + j} det(M_{ij})
+$$
+
+donde $M_{ij}$ es el menor del elemento $(i, j)$.
+
+### Cálculo del determinante
+
+Siguiendo los conceptos anteriores, se calcula el determinante con la **Regla de Laplace**, que dice que:
+
+$$
+det(A) = \sum_{j = 1}^{n} a_{ij} A_{ij}
+$$
+
+donde $a_{ij}$ es el elemento en la posición $(i, j)$ y $A_{ij}$ su cofactor.
