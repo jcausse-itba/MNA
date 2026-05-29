@@ -40,3 +40,19 @@ Analíticamente, es el núcleo de la transformación $(A - \lambda_i I)$:
 $$
 S_{\lambda_i} = \{ v \in V / A \cdot v = \lambda_i \cdot v \} = \text{Nu}(A - \lambda_i I)
 $$
+
+---
+
+## 7.4. Multiplicidad Aritmética y Geométrica de Autovalores
+* **Multiplicidad Aritmética (MA):** Es el orden de multiplicidad (el exponente) con el que el autovalor aparece como raíz en la factorización del polinomio característico $p_A(\lambda)$.
+* **Multiplicidad Geométrica (MG):** Se define como la dimensión del autoespacio $S_{\lambda_i}$ asociado a dicho autovalor. Equivale a la cantidad de grados de libertad (variables libres) al resolver el sistema homogéneo $(A - \lambda_i I) \cdot X = \vec{0}$.
+  $$
+  MG(\lambda_i) = \dim(S_{\lambda_i})
+  $$
+
+### 7.4.1. Propiedad
+
+Siempre se cumple que, para todo autovalor $\lambda_i$:
+$$
+1 \le MG(\lambda_i) \le MA(\lambda_i)
+$$

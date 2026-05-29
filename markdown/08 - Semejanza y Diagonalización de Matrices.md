@@ -23,3 +23,17 @@ Si la matriz es diagonalizable, las matrices $P$ y $D$ se arman de la siguiente 
     $$
     P = \Big[ v_1 \Big| v_2 \Big| \dots \Big| v_n \Big]
     $$
+
+---
+
+## 8.2. Criterio de Diagonalización por Multiplicidades
+
+Para determinar si una matriz es diagonalizable sin necesidad de hallar explícitamente todos sus autovectores, se analiza la relación entre las multiplicidades de cada autovalor.
+
+Una matriz es diagonalizable si y solo si para todos y cada uno de sus autovalores, la multiplicidad geométrica coincide exactamente con la multiplicidad aritmética.
+$$
+MA(\lambda_i) = MG(\lambda_i) \quad \forall i
+$$
+
+### 8.2.1. Corolario 
+Si todos los autovalores de una matriz son distintos (es decir, la multiplicidad aritmética de todos ellos es $1$), entonces la matriz es automáticamente diagonalizable. Esto se debe a la propiedad `7.4.1.`.
