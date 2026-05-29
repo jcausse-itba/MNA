@@ -76,7 +76,22 @@ $$
 
 Cuando no es cuadrada, se habla de **pseudoinversa** (viene más adelante).
 
-### 3.5.1. Propiedades
+### 3.5.1. Obtención de la Matriz Inversa
+
+* Colocar la matriz (cuadrada), una línea separadora a la derecha, y la identidad de las mismas dimensiones a la derecha de la línea.
+* Triangular por Gauss Jordan hasta obtener la identidad del lado izquierdo.
+* La matriz que quede del lado derecho es la inversa de la que originalmente se colocó del lado izquierdo.
+   
+> **Descarte rápido:** Si durante el proceso de triangulación una fila entera del lado izquierdo se anula (se llena completamente de ceros), significa que el determinante de $A$ es nulo y, por lo tanto, la matriz **no es invertible**.
+
+> **Caso especial para matrices $2 \times 2$:**
+Para matrices de este tamaño, no hace falta aplicar Gauss-Jordan, ya que existe una fórmula directa más rápida. Dada una matriz $A = \begin{bmatrix} a & b \\ c & d \end{bmatrix}$, su inversa se calcula directamente como:
+> $$
+> A^{-1} = \frac{1}{\det(A)} \begin{bmatrix} d & -b \\ -c & a \end{bmatrix}
+> $$
+> *(Se intercambian de lugar los elementos de la diagonal principal, y se les invierte el signo a los elementos de la diagonal secundaria).*
+
+### 3.5.2. Propiedades
 
 1. $A^{-1}$ es única para toda $A$.
 2. $(A^{-1})^{-1} = A$

@@ -5,6 +5,7 @@ Resúmenes de Métodos Numéricos Avanzados
 ## Contenido
 
 Importante:
+* `Resumen.pdf`: Resumen completo (todos compilados en orden), con índice al principio, listo para imprimir.
 * `markdown`: Resúmenes separados, editables en formato `MD`.
 * `img`: Imágenes referenciadas desde los `MD`.
 

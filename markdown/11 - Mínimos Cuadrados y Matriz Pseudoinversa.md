@@ -12,14 +12,14 @@ $$
 * Resolver el nuevo sistema cuadrado resultante $A^T A \cdot X$ para obtener la solución óptima (por ejemplo, triangulando por Gauss-Jordan).
 
 ## 11.2. Matriz Pseudoinversa de Moore-Penrose
-Si la matriz cuadrada proveniente de las ecuaciones normales ($A^T A$) resulta ser regular (o lo que es lo mismo, $det(A^T A) \neq 0$), el sistema posee solución única y se puede despejar multiplicando ambos miembros por su matriz inversa.
+Si la matriz cuadrada proveniente de las ecuaciones normales ($A^T A$) resulta ser regular o invertible ($det(A^T A) \ne 0$), el sistema posee solución única y se puede despejar multiplicando ambos miembros por su matriz inversa.
 $$
 X = (A^T A)^{-1} A^T \cdot B
 $$
 Al bloque analítico $(A^T A)^{-1} A^T$ se lo denomina **Matriz Pseudoinversa** y se lo denota simbólicamente como $A^+$.
 
 ### 11.2.1. Algoritmo paso a paso
-* Construir el producto matricial $A^T A$ y verificar rápidamente que su determinante no sea nulo.
+* Construir el producto matricial $A^T A$ y verificar que su determinante no sea nulo.
 * Proceder a calcular la matriz inversa propiamente dicha: $(A^T A)^{-1}$.
 * Multiplicar esa nueva inversa a derecha por la matriz transpuesta $A^T$ para finalizar y conformar $A^+$.
 * Evaluar que la mejor aproximación al resultado deseado del sistema original es el vector $\hat{X} = A^+ \cdot B$.
