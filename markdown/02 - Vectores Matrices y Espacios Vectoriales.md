@@ -223,3 +223,12 @@ det(A) = \sum_{j = 1}^{n} a_{ij} A_{ij}
 $$
 
 donde $a_{ij}$ es el elemento en la posición $(i, j)$ y $A_{ij}$ su cofactor.
+
+* Para matrices de $2 \times 2$ conviene aplicar $a_{11} a_{22} - a_{21} a_{12}$
+* Para matrices de $3 \times 3$ conviene aplicar la Regla de Sarrus.
+
+<p align="center">
+  <img src="../img/sarrus.png" height="120"/>
+</p>
+
+* Para matrices de mayores dimensiones, el cálculo es largo, ya que es recursivo.
