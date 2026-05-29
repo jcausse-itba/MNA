@@ -24,6 +24,8 @@ Para que una función sea una TL, debe cumplir estrictamente con las siguientes 
 
 > **Descarte rápido:**. Si al evaluar la función en el vector nulo el resultado es distinto de cero, la función **no es una transformación lineal**. (Cuidado: que dé cero no asegura que lo sea, pero que no dé cero asegura que no lo es).
 
+> **Nota:** Si $V$ = $W$, entonces $T: V \rightarrow V$. $T$ es un **endomorfismo**.
+
 ### 6.1.1. Propiedades Inmediatas (Consecuencias de la definición)
 Si se demuestra que $T$ es una transformación lineal, se cumplen de forma directa las siguientes propiedades:
 
