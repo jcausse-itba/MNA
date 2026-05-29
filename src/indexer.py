@@ -3,7 +3,7 @@ from pathlib import Path
 
 TAB_SIZE_SPACES = 4
 
-def generate_toc(target_dir: Path, output_file: Path) -> str:
+def generate_toc(target_dir: Path, output_file: Path) -> None:
     if not target_dir.exists():
         raise FileNotFoundError(f"Error: The directory '{target_dir}' does not exist.")
 
@@ -43,4 +43,4 @@ def generate_toc(target_dir: Path, output_file: Path) -> str:
         output = "\n".join(toc_lines) + "\n"
         out_f.write(output)
 
-    return output
+    print(output)

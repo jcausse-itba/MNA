@@ -11,7 +11,7 @@ Importante:
 
 Cosas que uno hace cuando está aburrido:
 * `src`: Código fuente para generar el índice y combinar todos los archivos MarkDown. Estaba bastante aburrido asique hice un mini-proyecto dentro de este repo.
-* `generate`: Script que genera el compilado. Se incluye primero el índice y luego el contenido de cada archivo en la carpeta `markdown` en orden alfabético por nombre de archivo. Solo se incluyen los archivos terminados en `.md`.
+* `generate`: Script que genera el compilado. Se incluye primero el heading, luego el índice, y luego el contenido de cada archivo en la carpeta `markdown` en orden alfabético por nombre de archivo. Solo se incluyen los archivos terminados en `.md`.
 
 ### Recomendaciones para exportar
 
