@@ -69,6 +69,8 @@ $$
 
 Cuando se trabaja con coordenadas y se tiene la matriz asociada a la transformación lineal $[T]_{B_V \rightarrow B_W}$:
 
+> **Nota:** La matriz asociada tiene dimensión $m \times n$, donde $dim(V) = n$ y $dim(W) = m$. Ver `6.8.`.
+
 1. **Para calcular el Núcleo:** Plantear y resolver el sistema homogéneo utilizando la matriz asociada como matriz de coeficientes:
    $$
    [T]_{B_V \rightarrow B_W} \cdot [v]_{B_V} = 0_W
@@ -153,3 +155,35 @@ Si te dan un conjunto de vectores transformados (ej: $T(v_1) = w_1, T(v_2) = w_2
 * **SÍ es TL.** Cumple $T(A+B) = T(A) + T(B)$ y $T(\lambda A) = \lambda T(A)$.
 * **Núcleo:** $T(A) = 0 \implies A + A^T = 0 \implies A = -A^T$. El núcleo está formado por todas las **matrices antisimétricas**.
 * **Imagen:** La suma de una matriz y su transpuesta siempre da como resultado una matriz simétrica. Por lo tanto, la imagen son todas las **matrices simétricas**.
+
+---
+
+## 6.7. Coordenadas de un Vector en una Base
+Sea $V$ un espacio vectorial de dimensión $n$ y $B = \{v_1, v_2, ..., v_n\}$ una base de $V$. Todo vector $v \in V$ se puede escribir de forma única como combinación lineal de los elementos de la base:
+$$
+v = \alpha_1 v_1 + \alpha_2 v_2 + ... + \alpha_n v_n
+$$
+
+Se define el **vector de coordenadas** de $v$ en la base $B$ (notado como $[v]_B$) al vector columna formado por los escalares de la combinación lineal:
+$$
+[v]_B = \begin{bmatrix} \alpha_1 \\ \alpha_2 \\ \vdots \\ \alpha_n \end{bmatrix} \in \mathbb{K}^n
+$$
+
+### 6.7.1. Isomorfismo fundamental
+La función que asigna a cada vector sus coordenadas ($\varphi(v) = [v]_B$) es una Transformación Lineal biyectiva (un isomorfismo). Esto implica que operar con vectores abstractos (polinomios, matrices, funciones) es algebraicamente idéntico a operar con sus vectores de coordenadas en $\mathbb{R}^n$ o $\mathbb{C}^n$. Formalmente: $V \cong \mathbb{K}^n$.
+
+---
+
+## 6.8. Matriz Asociada a una Transformación Lineal
+Sean $V$ (con $dim(V) = n$) y $W$ (con $dim(W) = m$) espacios vectoriales con bases $B_V = \{v_1, ..., v_n\}$ y $B_W = \{w_1, ..., w_m\}$ respectivamente. Dada una TL $T: V \rightarrow W$, se puede representar toda la transformación mediante una única matriz $A$ (o $M_{B_V \rightarrow B_W}$), de dimensiones $m \times n$.
+
+La ecuación fundamental que relaciona la TL abstracta con su versión matricial es:
+$$
+[T(v)]_{B_W} = M_{B_V \rightarrow B_W} \cdot [v]_{B_V}
+$$
+
+**¿Cómo se construye esta matriz?**
+Cada columna de la matriz $M$ es el vector de coordenadas (en la base de llegada $B_W$) del transformado de cada vector de la base de salida $B_V$.
+$$
+M_{B_V \rightarrow B_W} = \Big[ [T(v_1)]_{B_W} \Big| [T(v_2)]_{B_W} \Big| \dots \Big| [T(v_n)]_{B_W} \Big]
+$$
