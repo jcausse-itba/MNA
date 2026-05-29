@@ -5,7 +5,7 @@
 * **Igualdad:** Dos vectores son iguales si son iguales componente a componente.
 * **Adición:** Dos vectores de la misma dimensión pueden sumarse componente a componente, generando un nuevo vector de la misma dimensión.
 * **Producto por un escalar:** Se multiplica el escalar por cada componente del vector. Genera un nuevo vector de la misma dimensión.
-* **Producto Interno**: Dados dos vectores $u, r\in \Kappa^n$ se define el producto interno (un escalar) entre ellos como:
+* **Producto Interno, Producto Escalar o Producto Punto**: Dados dos vectores $u, r\in \Kappa^n$ se define el producto interno (un escalar) entre ellos como:
   $$
   \langle u, r \rangle = \sum_{k = 1}^{n} u_i \overline{r_i}
   $$
@@ -16,7 +16,7 @@
   * Con $\alpha$ escalar, $\langle \alpha u, r \rangle = \alpha \langle u, r \rangle$
   * Con $\alpha$ escalar, $\langle u, \alpha r \rangle = \bar{\alpha} \langle u, r \rangle$
   * $\langle u, u \rangle \space \ge 0$
-  * $|\langle u, r \rangle|^2 \le |\langle u, u \rangle|^2 \space |\langle r, r \rangle|^2$
+  * $|\langle u, r \rangle|^2 \le \langle u, u \rangle \langle r, r \rangle$
 * **Producto Vectorial:** Para dos vectores en $\R^3$ se usa la Regla de Sarrus. Devuelve un vector perpendicular a ambos.
 
 <p align="center">
@@ -104,7 +104,7 @@ Sean las matrices $C$ de dimensión $n \times m$, $D$ de dimensión $m \times p$
 * **Potenciación de matrices:** $A^n$ = $AAA...A$, un total de $n$ veces.
   
   Propiedades:
-  * $A^{p + q} = A^p + A^q$
+  * $A^{p + q} = A^p A^q$
   * $(A^p)^q = A^{pq}$
 
 ## Matriz Transpuesta
