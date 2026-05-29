@@ -125,7 +125,7 @@ $$
 
 ---
 
-## 6.5. Teorema de Existencia y Unicidad de una TL
+## 6.5. Teorema de Existencia y Unicidad de una TL (Teorema Fundamental)
 Este teorema asegura que **una Transformación Lineal queda unívocamente definida si sabemos cómo transforma a los vectores de una base**.
 
 Sean $V, W$ espacios vectoriales. Si $B = \{v_1, ..., v_n\}$ es una **base** de $V$, y tomamos vectores cualesquiera $\{w_1, ..., w_n\} \subseteq W$, entonces existe una **única** Transformación Lineal tal que $T(v_i) = w_i$ para todo $i$.
