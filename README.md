@@ -4,11 +4,24 @@ Resúmenes de Métodos Numéricos Avanzados
 
 ## Contenido
 
-* Carpeta `pdf`: Resúmenes exportados a PDF listos para imprimir.
-* Carpeta `markdown`: Resúmenes editables en formato `MD`. Se recomienda utilizar Visual Studio Code con las siguientes extensiones para editar y exportar:
+Importante:
+* `pdf`: Resúmenes exportados a PDF listos para imprimir. `Resumen-Combinado.md` contiene todos los archivos combinados, más un índice.
+* `markdown`: Resúmenes editables en formato `MD`. `Resumen-Combinado.pdf` contiene todos los archivos combinados, más un índice.
+* `img`: Imágenes referenciadas desde los `MD`.
+
+Cosas que uno hace cuando está aburrido:
+* `src`: Código fuente para generar el índice y combinar todos los archivos MarkDown. Estaba bastante aburrido asique hice un mini-proyecto dentro de este repo.
+* `generate`: Script que genera el compilado.
+
+### Recomendaciones para exportar
+
+Se recomienda utilizar Visual Studio Code con las siguientes extensiones para editar y exportar:
   * `Markdown All in One` para _syntax highlighting_ y _shortcuts_.
   * `Markdown PDF` para exportar a PDF.
-* Carpeta `img`: Imágenes referenciadas desde los `MD`.
+
+## Colaboración
+
+Si hay algo que pueda mejorarse o contenido para agregar, se agradecerá abrir un Pull Request.
 
 ### Ejemplo de como insertar una imagen
 
@@ -19,7 +32,3 @@ Se hace embebiendo HTML.
   <img src="../img/sarrus.png" height="120"/>
 </p>
 ```
-
-## Colaboración
-
-Si hay algo que pueda mejorarse o contenido para agregar, se agradecerá abrir un Pull Request.
