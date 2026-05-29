@@ -35,11 +35,15 @@ Dependiendo del espacio vectorial, el producto interno toma diferentes formas:
 
 ## 5.3. Norma Inducida y Proyección Ortogonal
 Todo producto interno "induce" (crea) automáticamente una **Norma** (longitud del vector), definida como:
-$$||u|| = \sqrt{\langle u, u \rangle} \implies ||u||^2 = \langle u, u \rangle$$ 
+$$
+||u|| = \sqrt{\langle u, u \rangle} \implies ||u||^2 = \langle u, u \rangle
+$$ 
 
 **Proyección Ortogonal:**
 Para proyectar un vector $u$ sobre la dirección de otro vector $v$, se utiliza la fórmula:
-$$P_v u = \frac{\langle u, v \rangle}{\langle v, v \rangle} \cdot v = \frac{\langle u, v \rangle}{||v||^2} \cdot v$$ 
+$$
+P_v u = \frac{\langle u, v \rangle}{\langle v, v \rangle} \cdot v = \frac{\langle u, v \rangle}{||v||^2} \cdot v
+$$ 
 
 ---
 
@@ -50,9 +54,14 @@ Una **Base Ortonormal (BON)** es una base $B = \{v_1, ..., v_n\}$ que cumple dos
 
 **Gran ventaja de las BON (Cálculo de Coordenadas):**
 Si se tiene un vector $v$ y se quiere escribirlo como combinación lineal de una BON, no hace falta resolver sistemas de ecuaciones. Cada escalar $\alpha_k$ se calcula directamente con el producto interno:
-$$\alpha_k = \langle v, v_k \rangle$$
+$$
+\alpha_k = \langle v, v_k \rangle
+$$
+
 Por lo tanto, el vector se expresa directamente como:
-$$v = \sum_{i=1}^{n} \langle v, v_i \rangle v_i$$
+$$
+v = \sum_{i=1}^{n} \langle v, v_i \rangle v_i
+$$
 
 ---
 
@@ -61,10 +70,22 @@ Todo espacio euclídeo de dimensión finita posee al menos una BON. El algoritmo
 
 **Algoritmo paso a paso:**
 * **Paso 1 (Primer vector):** Tomamos el primero y lo normalizamos.
-    $$u_1 = \frac{v_1}{||v_1||}$$ 
+    $$
+    u_1 = \frac{v_1}{||v_1||}
+    $$
+
 * **Paso 2:** Al segundo vector le restamos su proyección sobre el primero, y luego normalizamos el resultado.
-    $$\tilde{u}_2 = v_2 - \langle v_2, u_1 \rangle u_1$$ 
-    $$u_2 = \frac{\tilde{u}_2}{||\tilde{u}_2||}$$ 
+    $$
+    \tilde{u}_2 = v_2 - \langle v_2, u_1 \rangle u_1
+    $$ 
+    $$
+    u_2 = \frac{\tilde{u}_2}{||\tilde{u}_2||}
+    $$ 
+
 * **Paso $k$-ésimo (Fórmula general):** A cada nuevo vector se le restan sus proyecciones sobre **todos** los vectores ya ortonormalizados anteriores, y finalmente se lo normaliza.
-    $$\tilde{u}_k = v_k - \sum_{i=1}^{k-1} \langle v_k, u_i \rangle u_i$$ 
-    $$u_k = \frac{\tilde{u}_k}{||\tilde{u}_k||}$$
+    $$
+    \tilde{u}_k = v_k - \sum_{i=1}^{k-1} \langle v_k, u_i \rangle u_i
+    $$ 
+    $$
+    u_k = \frac{\tilde{u}_k}{||\tilde{u}_k||}
+    $$
