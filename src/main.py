@@ -5,7 +5,7 @@ from combiner import combine_md
 def main():
     target_dir = Path('./markdown/')
     index_file = Path('./markdown/index.md')
-    output_file = Path('./Resumen-Combinado.md')
+    output_file = Path('./markdown/Resumen.md')
     
     try:
         print(generate_toc(target_dir, index_file))

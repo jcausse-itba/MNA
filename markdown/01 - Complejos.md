@@ -1,6 +1,6 @@
-# Números Complejos
+# 1. Números Complejos
 
-## Unidad Imaginaria
+## 1.1. Unidad Imaginaria
 Se define la unidad imaginaria $i$ de forma tal que:
 $$ i^2 = -1$$
 
@@ -28,13 +28,13 @@ $$
 
 ---
 
-## Definición de Número Complejo
+## 1.2. Definición de Número Complejo
 
 > **Nota:** El cuerpo $\Complex$ de todos los números complejos es un cuerpo no ordenado, ya que no cumple los axiomas de orden que se cumlpen para $\R$.
 
 Se define un número complejo $z$ de las siguientes dos formas:
 
-### Forma Binómica
+### 1.2.1. Forma Binómica
 Dado por su parte real $Re(z)$ y su parte imaginaria $Im(z)$.
 $$
 z = a + bi \text{, donde } z \in \Complex, a = Re(z) \in \R, b = Im(z) \in \R
@@ -42,7 +42,7 @@ $$
 
 Igualdad: $z = w \iff a_z = a_w \land b_z = b_w$.
 
-### Forma Polar
+### 1.2.2. Forma Polar
 Dado por su módulo $|z|$ y su argumento $arg(z)$ o ángulo $\varphi_z$.
 $$
 |z| = \sqrt{(a^2 + b^2)} \text{,  } |z| \in \R
@@ -66,7 +66,7 @@ Igualdad: $z = w \iff |z| = |w| \land arg(z) = arg(w) + 2k \pi \text{,  } k \in 
 
 > **Importante:** El cálculo del argumento requiere un ajuste para los distintos cuadrantes.
 
-### Propiedades
+### 1.2.3. Propiedades
 
 1. $|z| \ge 0 \land |z| = 0 \iff z = 0 + 0i$
 2. $|zw| = |z||w| \space  \forall z, w \in \Complex$
@@ -87,14 +87,14 @@ $$
 
 ---
 
-## Complejo Conjugado
+## 1.3. Complejo Conjugado
 
 Sea $z \in \Complex$, se define su conjugado $\bar{z}$ como el único complejo que cumple:
 $$
 Re(\bar{z}) = Re(z) \land Im(\bar{z}) = -Im(z)
 $$
 
-### Propiedades
+### 1.3.1. Propiedades
 1. $z = \bar{z} \iff Im(z) = 0$
 2. $\overline{z + w} = \bar{z} + \bar{w}$
 3. $\overline{zw} = \bar{z} \bar{w}$
@@ -106,7 +106,7 @@ $$
  
 ---
 
-## Operaciones con Complejos
+## 1.4. Operaciones con Complejos
 
 * **Suma:** Utilizar forma binómica. Sumar los $a$ y los $b$ por separado.
 * **Resta:** Utilizar forma binómica. Restar los $a$ y los $b$ por separado.

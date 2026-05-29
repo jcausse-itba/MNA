@@ -1,13 +1,13 @@
-# Producto Interno, Ortogonalidad y Norma
+# 5. Producto Interno Generalizado y Bases Ortonormales
 
-## Generalización de Paralelismo y Perpendicularidad
+## 5.1. Generalización de Paralelismo y Perpendicularidad
 En espacios vectoriales abstractos, buscamos generalizar los conceptos geométricos clásicos:
 * **Paralelismo:** Dos vectores $v, w \in V$ son paralelos (o proporcionales) si existe un escalar $\lambda \in \mathbb{K}$ tal que $w = \lambda \cdot v$.
 * **Perpendicularidad (Ortogonalidad):** Requiere definir previamente una nueva operación matemática llamada **Producto Interno**.
 
 ---
 
-## Espacio con Producto Interno (Espacio Euclídeo)
+## 5.2. Espacio con Producto Interno (Espacio Euclídeo)
 Un **Producto Interno** es una función $\langle u, v \rangle$ que toma dos vectores de $V$ y devuelve un escalar de $\mathbb{K}$ (generalmente $\mathbb{R}$ o $\mathbb{C}$). Para ser considerado como tal, debe cumplir estrictamente los siguientes axiomas:
 
 1.  **Linealidad en la primera componente:**
@@ -21,7 +21,7 @@ Un **Producto Interno** es una función $\langle u, v \rangle$ que toma dos vect
 
 ---
 
-## Ejemplos Clásicos de Producto Interno
+### 5.2.1. Ejemplos Clásicos de Producto Interno
 Dependiendo del espacio vectorial, el producto interno toma diferentes formas:
 
 * **En $\mathbb{R}^n$ (El clásico producto escalar):**
@@ -33,7 +33,7 @@ Dependiendo del espacio vectorial, el producto interno toma diferentes formas:
 
 ---
 
-## Norma Inducida y Proyección Ortogonal
+## 5.3. Norma Inducida y Proyección Ortogonal
 Todo producto interno "induce" (crea) automáticamente una **Norma** (longitud del vector), definida como:
 $$||u|| = \sqrt{\langle u, u \rangle} \implies ||u||^2 = \langle u, u \rangle$$ 
 
@@ -43,7 +43,7 @@ $$P_v u = \frac{\langle u, v \rangle}{\langle v, v \rangle} \cdot v = \frac{\lan
 
 ---
 
-## Bases Ortonormales (BON) y Coordenadas
+## 5.4. Bases Ortonormales (BON) y Coordenadas
 Una **Base Ortonormal (BON)** es una base $B = \{v_1, ..., v_n\}$ que cumple dos condiciones excepcionales:
 1.  **Normalizados:** Todos sus vectores tienen norma 1 ($||v_i|| = 1$).
 2.  **Ortogonales entre sí:** $\langle v_i, v_j \rangle = 0$ para todo $i \neq j$.
@@ -56,7 +56,7 @@ $$v = \sum_{i=1}^{n} \langle v, v_i \rangle v_i$$
 
 ---
 
-## Proceso de Ortonormalización de Gram-Schmidt
+## 5.5. Proceso de Ortonormalización de Gram-Schmidt
 Todo espacio euclídeo de dimensión finita posee al menos una BON. El algoritmo de Gram-Schmidt permite construir una BON $\{u_1, ..., u_n\}$ a partir de cualquier base genérica $B = \{v_1, ..., v_n\}$.
 
 **Algoritmo paso a paso:**

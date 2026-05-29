@@ -1,6 +1,6 @@
-# Espacios Vectoriales Generales
+# 4. Espacios Vectoriales Generales
 
-## Definición de Espacio Vectorial
+## 4.1. Definición de Espacio Vectorial
 Un **espacio vectorial** se define formalmente como una cuaterna $(V, +, \mathbb{K}, \cdot)$ donde $V$ es un conjunto no vacío, $\mathbb{K}$ es un cuerpo ($\mathbb{R}$ o $\mathbb{C}$ en esta materia), $+$ es la operación de suma interna y $\cdot$ es la multiplicación por un escalar. 
 
 Para que esta estructura sea válida, debe cumplir los siguientes 10 axiomas:
@@ -24,7 +24,7 @@ Para que esta estructura sea válida, debe cumplir los siguientes 10 axiomas:
 
 ---
 
-## Subespacios Vectoriales
+## 4.2. Subespacios Vectoriales
 Un subconjunto $S \subseteq V$ es un **subespacio vectorial** de $V$ si, por sí mismo, también es un espacio vectorial. En la práctica, solo hace falta probar dos condiciones para demostrar que lo es:
 
 1. **Cerrado para la suma:** $\forall s_1, s_2 \in S \Rightarrow s_1+s_2 \in S$.
@@ -34,7 +34,7 @@ Un subconjunto $S \subseteq V$ es un **subespacio vectorial** de $V$ si, por sí
 
 ---
 
-## Combinación Lineal y Espacios Generados
+## 4.3. Combinación Lineal y Espacios Generados
 
 * **Combinación Lineal (CL):** Dado un conjunto de vectores $A = \{v_1, ..., v_n\} \subseteq V$, se dice que un vector $v \in V$ es combinación lineal de $A$ si existen escalares $\alpha_1, ..., \alpha_n \in \mathbb{K}$ que permitan escribirlo como una suma ponderada:
 
@@ -46,7 +46,7 @@ Un subconjunto $S \subseteq V$ es un **subespacio vectorial** de $V$ si, por sí
 
 ---
 
-## Dependencia e Independencia Lineal
+## 4.4. Dependencia e Independencia Lineal
 
 Dado un conjunto $A = \{v_1, ..., v_n\} \subseteq V$:
 
@@ -63,7 +63,7 @@ Dado un conjunto $A = \{v_1, ..., v_n\} \subseteq V$:
 
 ---
 
-## Base y Dimensión
+## 4.5. Base y Dimensión
 
 * **Base:** Un conjunto $B = \{v_1, ..., v_n\} \subseteq V$ es una base del espacio vectorial $V$ si cumple **simultáneamente** dos requisitos:
     1.  $B$ es linealmente independiente (LI). Para probar esto, ver apartado anterior.
@@ -75,7 +75,7 @@ Dado un conjunto $A = \{v_1, ..., v_n\} \subseteq V$:
 
 ---
 
-## Contraejemplos Clásicos de Examen
+## 4.6. Contraejemplos Clásicos de Examen
 
 Al verificar si un conjunto es subespacio, hay que tener cuidado con estas "trampas" habituales:
 
