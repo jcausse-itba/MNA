@@ -5,7 +5,7 @@
 * **Igualdad:** Dos vectores son iguales si son iguales componente a componente.
 * **Adición:** Dos vectores de la misma dimensión pueden sumarse componente a componente, generando un nuevo vector de la misma dimensión.
 * **Producto por un escalar:** Se multiplica el escalar por cada componente del vector. Genera un nuevo vector de la misma dimensión.
-* **Producto Interno, Producto Escalar o Producto Punto**: Dados dos vectores $u, r\in \Kappa^n$ se define el producto interno (un escalar) entre ellos como:
+* **Producto Interno, Producto Escalar o Producto Punto**: Dados dos vectores $u, r\in \mathbb{K}^n$ se define el producto interno (un escalar) entre ellos como:
   $$
   \langle u, r \rangle = \sum_{k = 1}^{n} u_i \overline{r_i}
   $$
@@ -76,7 +76,7 @@ $$
   Propiedades:
   * Es asociativa.
   * Es conmutativa.
-  * La matriz que contiene todos sus elementos nulos para el cuerpo sobre el que está definida la matriz es el elemento neutro de esta operación.
+  * La matriz que contiene todos sus elementos nulos para el cuerpo $\mathbb{K}$ sobre el que está definida la matriz es el elemento neutro de esta operación.
   * Para toda matriz existe su inversa aditiva (aquella que al sumar las dos se obtiene la matriz nula).
 
 Sean $A$, $B$ matrices y $\lambda$, $\mu$ escalares.
