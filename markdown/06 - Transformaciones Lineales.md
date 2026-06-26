@@ -189,3 +189,42 @@ Cada columna de la matriz $M$ es el vector de coordenadas (en la base de llegada
 $$
 M_{B_V \rightarrow B_W} = \Big[ [T(v_1)]_{B_W} \Big| [T(v_2)]_{B_W} \Big| \dots \Big| [T(v_n)]_{B_W} \Big]
 $$
+
+---
+
+## 6.9. Cambio de Base para Transformaciones Lineales
+Si tenemos una transformación lineal $T: V \rightarrow W$ y conocemos su matriz asociada respecto a un par de bases $B_V$ y $B_W$, a menudo es útil encontrar la matriz asociada a otras bases, digamos $B'_V$ y $B'_W$.
+
+La relación entre las matrices de la misma transformación lineal en diferentes bases está dada por las matrices de cambio de base. La fórmula general es:
+
+$$
+M_{B'_V \rightarrow B'_W} = C_{B_W \rightarrow B'_W} \cdot M_{B_V \rightarrow B_W} \cdot C_{B'_V \rightarrow B_V}
+$$
+
+Donde:
+* $M_{B'_V \rightarrow B'_W}$ es la nueva matriz asociada a $T$ (de la base $B'_V$ a la base $B'_W$).
+* $C_{B_W \rightarrow B'_W}$ es la matriz de cambio de base en el espacio de llegada $W$ (de $B_W$ a $B'_W$). Recordá que esta matriz es la inversa de $C_{B'_W \rightarrow B_W}$.
+* $M_{B_V \rightarrow B_W}$ es la matriz asociada original.
+* $C_{B'_V \rightarrow B_V}$ es la matriz de cambio de base en el espacio de salida $V$ (de $B'_V$ a $B_V$).
+
+> **Regla Mnemotécnica:** Para recordar el orden de la multiplicación en la fórmula, se puede pensarlo como un "viaje" que se lee de derecha a izquierda:
+> 1. Un vector entra en coordenadas de la base **$B'_V$**.
+> 2. Se convierte a coordenadas de la base **$B_V$** (al multiplicarlo por $C_{B'_V \rightarrow B_V}$).
+> 3. Se le aplica la transformación con la matriz original, pasando a la base **$B_W$** (al multiplicarlo por $M_{B_V \rightarrow B_W}$).
+> 4. Finalmente, se convierte a las coordenadas de la nueva base de llegada **$B'_W$** (al multiplicarlo por $C_{B_W \rightarrow B'_W}$).
+
+### 6.9.1. Caso particular: Endomorfismos ($V = W$)
+Si la transformación lineal es un endomorfismo ($T: V \rightarrow V$), y utilizamos la misma base para el espacio de salida y de llegada (es decir, pasamos de una base $B$ a una nueva base $B'$), la fórmula se simplifica. 
+
+Llamando $M_B$ a la matriz de la transformación en la base $B$ (es decir, $M_{B \rightarrow B}$), la nueva matriz en la base $B'$ será:
+
+$$
+M_{B'} = C_{B \rightarrow B'} \cdot M_B \cdot C_{B' \rightarrow B}
+$$
+
+Dado que $C_{B \rightarrow B'} = (C_{B' \rightarrow B})^{-1}$, si llamamos a la matriz de paso $P = C_{B' \rightarrow B}$, podemos reescribir esto de forma mucho más compacta:
+$$
+M_{B'} = P^{-1} \cdot M_B \cdot P
+$$
+
+> **Nota:** A las matrices $M_{B'}$ y $M_B$ que cumplen con esta relación se las llama **matrices semejantes**. Las matrices semejantes representan la misma transformación lineal (pero vista desde sistemas de referencia o bases diferentes) y, por lo tanto, comparten propiedades clave: tienen el mismo determinante, la misma traza y los mismos autovalores.
