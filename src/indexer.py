@@ -34,7 +34,7 @@ def generate_toc(target_dir: Path, output_file: Path) -> None:
                     # Level 3 (###) -> 2 indents (8 spaces)
                     indent = ' ' * (TAB_SIZE_SPACES * (level - 1))
 
-                    # Format line: [indent]* [Heading Text](filename.md#anchor)
+                    # Format line: [indent]* [Heading Text]
                     toc_line = f"{indent}* {heading_text}"
                     toc_lines.append(toc_line)
 
