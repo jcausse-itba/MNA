@@ -3,16 +3,7 @@ from pathlib import Path
 
 TAB_SIZE_SPACES = 4
 
-def generate_toc(target_dir: Path, output_file: Path) -> None:
-    if not target_dir.exists():
-        raise FileNotFoundError(f"Error: The directory '{target_dir}' does not exist.")
-
-    md_files = sorted(
-        [f for f in target_dir.glob("*.md")]
-    )
-
-    if not md_files:
-        raise FileNotFoundError("No markdown files found in the directory.")
+def generate_toc(md_files: list[Path], output_file: Path) -> None:
 
     toc_lines = ["# Indice\n"]
 

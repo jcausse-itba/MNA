@@ -1,15 +1,6 @@
 from pathlib import Path
 
-def combine_md(target_dir: Path, prepend_files: list[Path], output_file: Path) -> None:
-    if not target_dir.exists():
-        raise FileNotFoundError(f"Error: The directory '{target_dir}' does not exist.")
-
-    md_files = sorted(
-        [f for f in target_dir.glob("*.md") if f.name.lower() != 'index.md']
-    )
-
-    if not md_files:
-        raise FileNotFoundError("No markdown files found in the directory.")
+def combine_md(md_files: list[Path], prepend_files: list[Path], output_file: Path) -> None:
 
     file_list = prepend_files + md_files
     
