@@ -9,6 +9,8 @@ Importante:
 * `markdown`: Resúmenes separados, editables en formato `MD`.
 * `img`: Imágenes referenciadas desde los `MD`.
 
+> **Nota Importante:** El visualizador de Markdown de GitHub no soporta por completo la sintaxis KaTeX utilizada para las fórmulas matemáticas. Evitar leer directamente o imprimir los Markdown crudos.
+
 Cosas que uno hace cuando está aburrido:
 * `src`: Código fuente para generar el índice y combinar todos los archivos MarkDown. Estaba bastante aburrido asique hice un mini-proyecto dentro de este repo.
 * `generate`: Script que genera el compilado. Se incluye primero el heading, luego el índice, y luego el contenido de cada archivo en la carpeta `markdown` en orden alfabético por nombre de archivo. Solo se incluyen los archivos terminados en `.md`.
