@@ -1,0 +1,132 @@
+# 11. Introducción a Fourier
+
+Toda función periódica puede expresarse como una sumatoria infinita de funciones periódicas más simples (senos y cosenos). Esto permite descomponer señales complejas en sus frecuencias puras, formando la base fundamental del análisis espectral en ingeniería.
+
+## 11.1. Intuición Analítica
+Al analizar señales como la onda diente de sierra, se observa gráficamente que pueden aproximarse sumando una onda fundamental y sus armónicos. La diferencia (el residuo) puede seguir aproximándose iterativamente agregando ondas de frecuencias múltiples (el doble, el triple, etc.).
+
+## 11.2. Representación Espectral
+Dada una señal periódica $s(t)$ de frecuencia $f_0$ y período $T = 1/f_0$, la serie se simplifica usando la fórmula de Euler ($e^{i \varphi} = \cos(\varphi) + i\sin(\varphi)$) para utilizar exponenciales complejas:
+$$
+s(t) = \sum_{k=-\infty}^{\infty} c_k e^{i 2\pi f_0 k t}
+$$
+Al conjunto de coeficientes $c_k$ se lo denomina el **espectro** de la señal.
+
+> **Nota:** Conociendo la amplitud y la fase (información contenida en los complejos $c_k$) se puede reconstruir la señal original de forma exacta. Matemáticamente, el espectro está definido también para frecuencias negativas ($k < 0$).
+
+### 11.2.1. Ejemplo
+Para la función diente de sierra $d(t) = t$ (en el intervalo $-\pi \le t < \pi$) extendida periódicamente tal que $d(t + 2\pi) = d(t)$, se obtiene el siguiente desarrollo en serie de senos:
+$$
+d(t) = 2 \sum_{k=1}^{\infty} \frac{(-1)^{k+1}}{k} \sin(k t)
+$$
+
+
+# 12. Series de Fourier
+
+La Serie de Fourier formaliza la intuición vista anteriormente abordándola desde el álgebra lineal: se la entiende como una proyección ortogonal en un espacio vectorial de funciones (espacio de Hilbert).
+
+## 12.1. Funciones Periódicas y Espacio L2
+Considerando el espacio de funciones de energía finita (cuadrado integrables) $L^2([0,T])$ con el producto interno $\langle f, g 
+angle = \int_0^T f(t) \overline{g(t)} dt$, el conjunto de exponenciales complejas forma una **Base Ortogonal**. Expresar una función en serie de Fourier es equivalente a hallar sus coordenadas en esta base.
+
+## 12.2. Cálculo de Coeficientes
+
+### 12.2.1. Algoritmo paso a paso (Forma Trigonométrica)
+* **Paso 1:** Identificar el período $T$ de la función y la frecuencia angular $\omega_n = \frac{2\pi n}{T}$.
+* **Paso 2:** Calcular la componente continua (valor medio) integrando a lo largo de un período:
+    $$
+    a_0 = \frac{2}{T} \int_T f(t) dt
+    $$
+* **Paso 3:** Calcular los coeficientes de los cosenos ($a_n$) y de los senos ($b_n$):
+    $$
+    a_n = \frac{2}{T} \int_T f(t) \cos(\omega_n t) dt \quad , \quad b_n = \frac{2}{T} \int_T f(t) \sin(\omega_n t) dt
+    $$
+* **Paso 4:** Ensamblar la serie: $f(t) = \frac{a_0}{2} + \sum_{n=1}^{\infty} (a_n \cos(\omega_n t) + b_n \sin(\omega_n t))$.
+
+> **Descarte rápido:** Si $f(t)$ es una función **impar** (simétrica respecto al origen), entonces su valor medio y todos los coeficientes de los cosenos son nulos ($a_0 = 0$, $a_n = 0$). Si es **par**, todos los coeficientes de los senos son nulos ($b_n = 0$).
+
+### 12.2.2. Algoritmo paso a paso (Forma Exponencial)
+* **Paso 1:** Identificar el período $T$.
+* **Paso 2:** Calcular el coeficiente $c_n$ proyectando la función sobre la base de exponenciales:
+    $$
+    c_n = \frac{1}{T} \int_T f(t) e^{-i \frac{2\pi n}{T} t} dt
+    $$
+* **Paso 3:** Armar la serie sumando para todo $n \in \Z$:
+    $$
+    f(t) = \sum_{n=-\infty}^{\infty} c_n e^{i \frac{2\pi n}{T} t}
+    $$
+
+## 12.3. Identidad de Parseval
+La energía en el dominio del tiempo es idéntica a la energía proyectada en el dominio de las frecuencias:
+$$
+||f||^2 = \int_0^T |f(t)|^2 dt = T \sum_{n=-\infty}^{\infty} |c_n|^2
+$$
+
+## 12.4. Convergencia y Condiciones de Dirichlet
+Para que la serie iguale a la función original punto a punto, esta debe cumplir las **Condiciones de Dirichlet** (tener un número finito de discontinuidades y extremos en un período).
+
+### 12.4.1. Ejemplo
+Dada una señal cuadrada que vale $1$ en $(0,1)$ y $-1$ en $(1,2)$. Esta función tiene un salto brusco en $t=1$.
+* En los puntos continuos, la serie converge exactamente a $f(t)$.
+* En la discontinuidad ($t=1$), la serie convergerá algebraicamente al promedio de sus límites laterales:
+    $$
+    f(1) = \frac{f(1^-) + f(1^+)}{2} = \frac{1 + (-1)}{2} = 0
+    $$
+
+
+# 13. Transformadas de Fourier
+
+Si se extiende el período de una señal al infinito ($T 	o \infty$), las series (para señales periódicas) se convierten en integrales (para señales aperiódicas). De este modo, la frecuencia discreta se vuelve continua.
+
+## 13.1. Definición Formal
+Dada una función módulo integrable $x \in L^1(\R)$, su Transformada de Fourier (espectro) $X(f)$ se define analíticamente como:
+$$
+X(f) = \mathcal{F}\{x\} = \int_{-\infty}^{\infty} x(t) e^{-i 2\pi f t} dt
+$$
+
+Y su Transformada Inversa (para recuperar $x(t)$) es:
+$$
+x(t) = \mathcal{F}^{-1}\{X\} = \int_{-\infty}^{\infty} X(f) e^{i 2\pi f t} df
+$$
+
+> **Nota:** En ingeniería se utiliza frecuentemente la convención con frecuencia lineal $f$ en el exponente en lugar de la angular $\omega$ para evitar arrastrar factores asimétricos constantes como $1/(2\pi)$.
+
+## 13.2. Propiedades Fundamentales
+* **Linealidad:** $\mathcal{F}\{ax + by\} = aX(f) + bY(f)$
+* **Desplazamiento temporal:** Retrasar en el tiempo gira la fase en frecuencia: $\mathcal{F}\{x(t - t_0)\} = X(f) e^{-i 2\pi f t_0}$
+* **Escalamiento:** $\mathcal{F}\{x(at)\} = \frac{1}{|a|} X\left(\frac{f}{a} \right)$. Comprimir en tiempo ($a>1$) implica expandir en frecuencia (cambios bruscos en el tiempo requieren frecuencias muy altas).
+* **Derivación:** $\mathcal{F}\{x'(t)\} = i 2\pi f \cdot X(f)$
+* **Convolución:** Una convolución en el dominio temporal es equivalente a un simple producto en el dominio frecuencial. Esta es la base de los filtros LTI:
+    $$
+    \mathcal{F}\{x * y\} = X(f) \cdot Y(f)
+    $$
+* **Dualidad:** Si $X(f) = \mathcal{F}\{x(t)\}$, entonces invertir los dominios invierte el signo: $\mathcal{F}\{X(t)\} = x(-f)$.
+
+## 13.3. Teorema de Plancherel ($L^2$)
+Este teorema permite extender la transformada a funciones que no son módulo integrables pero que sí son cuadrado integrables (señales de energía). Conserva el producto interno, de forma que la energía global de la señal se mantiene invariable entre dominios:
+$$
+\int_{-\infty}^{\infty} |x(t)|^2 dt = \int_{-\infty}^{\infty} |X(f)|^2 df
+$$
+
+## 13.4. Funciones Generalizadas
+Para operar con señales que no decaen, se usa la teoría de distribuciones (apoyada en la Delta de Dirac $\delta(t)$).
+* $\mathcal{F}\{1\} = \delta(f)$ (La corriente continua o constante concentra absolutamente toda su energía en frecuencia cero).
+* $\mathcal{F}\{\delta(t)\} = 1$ (Un impulso perfecto requiere excitar a todas las frecuencias existentes por igual).
+
+### 13.4.1. Algoritmo paso a paso para Transformadas simples
+* **Paso 1:** Plantear la integral de la definición reemplazando $x(t)$.
+* **Paso 2:** Ajustar los límites de integración al intervalo donde la función sea estrictamente no nula.
+* **Paso 3:** Integrar la función respecto al tiempo $t$ asumiendo a $f$ como una constante escalar, y evaluar por Barrow.
+* **Paso 4:** Simplificar algebraicamente el resultado utilizando las identidades de Euler si quedan exponenciales simétricas.
+
+### 13.4.2. Ejemplo
+Transformada del Pulso Rectangular $\Pi(t)$ (vale $1$ para $|t| \le 1/2$ y $0$ fuera).
+Aplicando los pasos del algoritmo:
+$$
+X(f) = \int_{-1/2}^{1/2} 1 \cdot e^{-i 2 \pi f t} dt = \left[ \frac{e^{-i 2\pi f t}}{-i 2\pi f} \right]_{-1/2}^{1/2}
+$$
+Evaluando los extremos y reescribiendo con Euler ($\sin(\theta) = \frac{e^{i \theta} - e^{-i \theta}}{2i}$):
+$$
+X(f) = \frac{e^{-i\pi f} - e^{i\pi f}}{-i 2\pi f} = \frac{\sin(\pi f)}{\pi f} = \text{sinc}(f)
+$$
+*Conclusión:* Un pulso cuadrado perfecto en el tiempo engendra un espectro en forma de lóbulo infinito ($\text{sinc}$) en el dominio frecuencial.
