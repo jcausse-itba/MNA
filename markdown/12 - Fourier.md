@@ -42,3 +42,20 @@ $$
 
 Todas las integrales son sobre intervalos de longitud igual a un período de la función, puede ser $[0, T]$, $[-T/2, T/2]$, etc. El intervalo puede elegirse de la forma que resulte más conveniente.
 
+### 12.1.1. Truco de las funciones pares e impares
+
+Para hacer más fácil estas integrales, es útil recordar lo siguiente:
+
+$$
+\int_{-a}^{a} f(t) dt = \begin{cases}
+0 \quad \text{si } f \text { es impar, es decir, } f(t) = -f(-t) \\
+2 \int_{0}^{a} f(t) dt \quad \text{si } f \text{ es par, es decir, } f(t) = f(-t)
+\end{cases}
+$$
+
+Además, al multiplicar entre sí funciones pares o impares, se cumple que:
+
+* $\text{Par} \cdot \text{Par} = \text{Par}$
+* $\text{Impar} \cdot \text{Impar} = \text{Par}$
+* $\text{Par} \cdot \text{Impar} = \text{Impar}$
+* $\text{Impar} \cdot \text{Par} = \text{Impar}$
