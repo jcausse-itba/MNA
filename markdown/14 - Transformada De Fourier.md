@@ -3,7 +3,9 @@
 Si se extiende el período de una señal al infinito ($T \to \infty$), las series (para señales periódicas) se convierten en integrales (para señales aperiódicas). De este modo, la frecuencia discreta se vuelve continua.
 
 ## 14.1. Definición Formal
+
 Dada una función módulo integrable $x \in L^1(\R)$, su Transformada de Fourier (espectro) $X(f)$ se define analíticamente como:
+
 $$
 X(f) = \mathcal{F}\{x\} = \int_{-\infty}^{\infty} x(t) e^{-i 2\pi f t} dt
 $$
@@ -16,6 +18,7 @@ $$
 > **Nota:** En ingeniería se utiliza frecuentemente la convención con frecuencia lineal $f$ en el exponente en lugar de la angular $\omega$ para evitar arrastrar factores asimétricos constantes como $1/(2\pi)$.
 
 ## 14.2. Propiedades Fundamentales
+
 * **Linealidad:** $\mathcal{F}\{ax + by\} = aX(f) + bY(f)$
 * **Desplazamiento temporal:** Retrasar en el tiempo gira la fase en frecuencia: $\mathcal{F}\{x(t - t_0)\} = X(f) e^{-i 2\pi f t_0}$
 * **Escalamiento:** $\mathcal{F}\{x(at)\} = \frac{1}{|a|} X\left(\frac{f}{a} \right)$. Comprimir en tiempo ($a>1$) implica expandir en frecuencia (cambios bruscos en el tiempo requieren frecuencias muy altas).
