@@ -25,7 +25,7 @@ $$
 donde:
 
 $$
-\omega_n = \frac{2 \pi}{T} n = 2 \pi f_n, \space \space \space \omega_{n + 1} \ge \omega_n
+\omega_n = \frac{2 \pi}{T} n = 2 \pi f_n \qquad \text{y} \qquad \omega_{n + 1} \ge \omega_n
 $$
 
 $$
@@ -48,8 +48,8 @@ Para hacer más fácil estas integrales, es útil recordar lo siguiente:
 
 $$
 \int_{-a}^{a} f(t) dt = \begin{cases}
-0 \quad \text{si } f \text { es impar, es decir, } f(t) = -f(-t) \\
-2 \int_{0}^{a} f(t) dt \quad \text{si } f \text{ es par, es decir, } f(t) = f(-t)
+0 \qquad \text{si } f \text { es impar, es decir, } f(t) = -f(-t) \\
+2 \int_{0}^{a} f(t) dt \qquad \text{si } f \text{ es par, es decir, } f(t) = f(-t)
 \end{cases}
 $$
 
